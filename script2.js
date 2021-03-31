@@ -641,6 +641,56 @@ function checkCookie() {
                 skPerk15.classList.add("checked");
             }
             break;
+      case "elementalist":
+            elementalist.classList.add("character-selected");
+            characterSelected = true;
+            confirmCharacterButton.classList.remove("not-without-more-selected");
+            if (perk1 === "bechosen"){
+                elPerk1.classList.add("checked");
+            }
+            if (perk2 === "bechosen"){
+                elPerk2.classList.add("checked");
+            }
+            if (perk3 === "bechosen"){
+                elPerk3.classList.add("checked");
+            }
+            if (perk4 === "bechosen"){
+                elPerk4.classList.add("checked");
+            }
+            if (perk5 === "bechosen"){
+                elPerk5.classList.add("checked");
+            }
+            if (perk6 === "bechosen"){
+                elPerk6.classList.add("checked");
+            }
+            if (perk7 === "bechosen"){
+                elPerk7.classList.add("checked");
+            }
+            if (perk8 === "bechosen"){
+                elPerk8.classList.add("checked");
+            }
+            if (perk9 === "bechosen"){
+                elPerk9.classList.add("checked");
+            }
+            if (perk10 === "bechosen"){
+                elPerk10.classList.add("checked");
+            }
+            if (perk11 === "bechosen"){
+                elPerk11.classList.add("checked");
+            }
+            if (perk12 === "bechosen"){
+                elPerk12.classList.add("checked");
+            }
+            if (perk13 === "bechosen"){
+                elPerk13.classList.add("checked");
+            }
+            if (perk14 === "bechosen"){
+                elPerk14.classList.add("checked");
+            }
+            if (perk15 === "bechosen"){
+                elPerk15.classList.add("checked");
+            }
+            break;
       default:
         characterSelected = false;
         break;
@@ -782,6 +832,7 @@ let doomStalker = document.getElementById('doomStalker');
 let nightshroud = document.getElementById("nightshroud");
 let berserker = document.getElementById("berserker");
 let sunkeeper = document.getElementById("sunkeeper");
+let elementalist = document.getElementById("elementalist");
 
 //status effects
 let poisoned = false;
@@ -2438,6 +2489,150 @@ function confirmCharacter(){
               break;
           case 9:
               maxHealth = 26;
+              health = maxHealth;
+              break;
+      }
+  } else if(elementalist.classList.contains("character-selected")){
+      let characterChoice = "elementalist";
+      setCookie("character", "elementalist", 365);
+      document.getElementById("elementalist-perks").classList.remove("hiding");
+      flippedCard = "./EL/elBack.png";
+      handSize = 10;
+      cardHand11.classList.add("hiding");
+      cardHand12.classList.add("hiding");
+      var hand = document.querySelectorAll(".hand");
+      var cardsToChooseFrom = document.querySelectorAll(".chooseCardsTable");
+      for (var i = 0; i<cardsToChooseFrom.length; i++){
+          (function (){
+              var cardToChooseFrom = cardsToChooseFrom[i];
+              if((i>-1 && i<13) || i>14){
+                  cardToChooseFrom.innerHTML = "<img id ='"+`${cardToChooseFrom.id}`+"' class = 'chooseCards "+`${cardToChooseFrom.id}`+"' src = './EL/el"+i+".jpg' />";
+              } else {
+                  cardToChooseFrom.innerHTML = '';
+              }
+          }).call(this,i);
+      }
+      for (var j = 0; j<hand.length; j++){
+          (function () {
+              var handCardBack = hand[j];
+              handCardBack.src = flippedCard;
+          }).call(this,j);
+      }
+      switch (levelCount) {
+          case 1:
+              maxHealth = 6;
+              health = maxHealth;
+              var cardsToChooseFrom = document.querySelectorAll(".chooseCardsTable");
+              for(var i = 15  ; i<cardsToChooseFrom.length; i++){
+                  var cardToChooseFrom = cardsToChooseFrom[i];
+                  cardToChooseFrom.innerHTML = "";
+              }
+              var levelTitles = document.querySelectorAll(".level");
+              for(var j = 3; j<levelTitles.length; j++){
+                  var levelTitle = levelTitles[j];
+                  levelTitle.classList.add("hiding");
+              }
+              break;
+          case 2:
+              maxHealth = 7;
+              health = maxHealth;
+              var cardsToChooseFrom = document.querySelectorAll(".chooseCardsTable");
+              for(var i = 17; i<cardsToChooseFrom.length; i++){
+                  var cardToChooseFrom = cardsToChooseFrom[i];
+                  cardToChooseFrom.innerHTML = "";
+              }
+              var levelTitles = document.querySelectorAll(".level");
+              for(var j = 4; j<levelTitles.length; j++){
+                  var levelTitle = levelTitles[j];
+                  levelTitle.classList.add("hiding");
+              }
+              break;
+          case 3:
+              maxHealth = 8;
+              health = maxHealth;
+              var cardsToChooseFrom = document.querySelectorAll(".chooseCardsTable");
+              for(var i = 19; i<cardsToChooseFrom.length; i++){
+                  var cardToChooseFrom = cardsToChooseFrom[i];
+                  cardToChooseFrom.innerHTML = "";
+              }
+              var levelTitles = document.querySelectorAll(".level");
+              for(var j = 5; j<levelTitles.length; j++){
+                  var levelTitle = levelTitles[j];
+                  levelTitle.classList.add("hiding");
+              }
+              break;
+          case 4:
+              maxHealth = 9;
+              health = maxHealth;
+              var cardsToChooseFrom = document.querySelectorAll(".chooseCardsTable");
+              for(var i = 21; i<cardsToChooseFrom.length; i++){
+                  var cardToChooseFrom = cardsToChooseFrom[i];
+                  cardToChooseFrom.innerHTML = "";
+              }
+              var levelTitles = document.querySelectorAll(".level");
+              for(var j = 6; j<levelTitles.length; j++){
+                  var levelTitle = levelTitles[j];
+                  levelTitle.classList.add("hiding");
+              }
+              break;
+          case 5:
+              maxHealth = 10;
+              health = maxHealth;
+              var cardsToChooseFrom = document.querySelectorAll(".chooseCardsTable");
+              for(var i = 23; i<cardsToChooseFrom.length; i++){
+                  var cardToChooseFrom = cardsToChooseFrom[i];
+                  cardToChooseFrom.innerHTML = "";
+              }
+              var levelTitles = document.querySelectorAll(".level");
+              for(var j = 7; j<levelTitles.length; j++){
+                  var levelTitle = levelTitles[j];
+                  levelTitle.classList.add("hiding");
+              }
+              break;
+          case 6:
+              maxHealth = 11;
+              health = maxHealth;
+              var cardsToChooseFrom = document.querySelectorAll(".chooseCardsTable");
+              for(var i = 25; i<cardsToChooseFrom.length; i++){
+                  var cardToChooseFrom = cardsToChooseFrom[i];
+                  cardToChooseFrom.innerHTML = "";
+              }
+              var levelTitles = document.querySelectorAll(".level");
+              for(var j = 8; j<levelTitles.length; j++){
+                  var levelTitle = levelTitles[j];
+                  levelTitle.classList.add("hiding");
+              }
+              break;
+          case 7:
+              maxHealth = 12;
+              health = maxHealth;
+              var cardsToChooseFrom = document.querySelectorAll(".chooseCardsTable");
+              for(var i = 27; i<cardsToChooseFrom.length; i++){
+                  var cardToChooseFrom = cardsToChooseFrom[i];
+                  cardToChooseFrom.innerHTML = "";
+              }
+              var levelTitles = document.querySelectorAll(".level");
+              for(var j = 9; j<levelTitles.length; j++){
+                  var levelTitle = levelTitles[j];
+                  levelTitle.classList.add("hiding");
+              }
+              break;
+          case 8:
+              maxHealth = 13;
+              health = maxHealth;
+              var cardsToChooseFrom = document.querySelectorAll(".chooseCardsTable");
+              for(var i = 29; i<cardsToChooseFrom.length; i++){
+                  var cardToChooseFrom = cardsToChooseFrom[i];
+                  cardToChooseFrom.innerHTML = "";
+              }
+              var levelTitles = document.querySelectorAll(".level");
+              for(var j = 10; j<levelTitles.length; j++){
+                  var levelTitle = levelTitles[j];
+                  levelTitle.classList.add("hiding");
+              }
+              break;
+          case 9:
+              maxHealth = 14;
               health = maxHealth;
               break;
       }
@@ -7016,6 +7211,210 @@ skConfirmPerksButton.onclick = () => {
     defaultDeckArray = modDeckArray.slice();
     confirmPerks();
 }
+
+//elementalist
+
+let elPerk1 = document.getElementById("elPerk1-1");
+let elPerk2 = document.getElementById("elPerk1-2");
+let elPerk3 = document.getElementById("elPerk2");
+let elPerk4 = document.getElementById("elPerk3-1");
+let elPerk5 = document.getElementById("elPerk3-2");
+let elPerk6 = document.getElementById("elPerk4");
+let elPerk7 = document.getElementById("elPerk5");
+let elPerk8 = document.getElementById("elPerk6");
+let elPerk9 = document.getElementById("elPerk7");
+let elPerk10 = document.getElementById("elPerk8");
+let elPerk11 = document.getElementById("elPerk9");
+let elPerk12 = document.getElementById("elPerk10");
+let elPerk13 = document.getElementById("elPerk11");
+let elPerk14 = document.getElementById("elPerk12");
+let elPerk15 = document.getElementById("elPerk13");
+
+elConfirmPerksButton.onclick = () => {
+    //Remove two -1 cards
+    if(elPerk1.classList.contains('checked')){
+        for (var i = 0; i<modDeckArray.length; i++){
+            if(modDeckArray[i] === mod12){
+                modDeckArray.splice(i, 2);
+                i = modDeckArray.length;
+                cardsInDeckText.innerHTML = "Cards in Deck: "+ modDeckArray.length;
+            }
+        }
+        setCookie("perk1", "bechosen", 365);
+    } else {
+        setCookie("perk1", "notChosen", 365);
+    }
+    //Remove two -1 cards
+    if(elPerk2.classList.contains('checked')){
+        for (var i = 0; i<modDeckArray.length; i++){
+            if(modDeckArray[i] === mod14){
+                modDeckArray.splice(i, 2);
+                i = modDeckArray.length;
+                cardsInDeckText.innerHTML = "Cards in Deck: "+ modDeckArray.length;
+            }
+        }
+        setCookie("perk2", "bechosen", 365);
+    } else {
+        setCookie("perk2", "notChosen", 365);
+    }
+    //Replace One -1 with One +1
+    if(elPerk3.classList.contains('checked')){
+        for (var i = 0; i<modDeckArray.length; i++){
+            if(modDeckArray[i] === mod16){
+                modDeckArray.splice(i, 1);
+                let newCard = "./elPerks/elPlusOne.jpg";
+                modDeckArray.push(newCard);
+                i = modDeckArray.length;
+                cardsInDeckText.innerHTML = "Cards in Deck: "+ modDeckArray.length;
+            }
+        }
+        setCookie("perk3", "bechosen", 365);
+    } else {
+        setCookie("perk3", "notChosen", 365);
+    }
+    //Replace one +0 with one +2 card
+    if(elPerk4.classList.contains('checked')){
+        for (var i = 0; i<modDeckArray.length; i++){
+            if(modDeckArray[i] === mod1){
+                modDeckArray.splice(i, 1);
+                let newCard = "./elPerks/elPlusTwo.jpg";
+                modDeckArray.push(newCard);
+                i = modDeckArray.length;
+                cardsInDeckText.innerHTML = "Cards in Deck: "+ modDeckArray.length;
+            }
+        }
+        setCookie("perk4", "bechosen", 365);
+    } else {
+        setCookie("perk4", "notChosen", 365);
+    }
+    //Replace one +0 with one +2 card
+    if (elPerk5.classList.contains('checked')){
+        for (var i = 0; i<modDeckArray.length; i++){
+            if(modDeckArray[i] === mod2){
+                modDeckArray.splice(i, 1);
+                let newCard = "./elPerks/elPlusTwo.jpg";
+                modDeckArray.push(newCard);
+                i = modDeckArray.length;
+                cardsInDeckText.innerHTML = "Cards in Deck: "+ modDeckArray.length;
+            }
+        }
+        setCookie("perk5", "bechosen", 365);
+    } else {
+        setCookie("perk5", "notChosen", 365);
+    }
+    //Add three +0 create fire cards
+    if (elPerk6.classList.contains('checked')){
+        let newCard = "./elPerks/elCreateFire.jpg";
+        modDeckArray.push(newCard);
+        modDeckArray.push(newCard);
+        modDeckArray.push(newCard);
+        cardsInDeckText.innerHTML = "Cards in Deck: "+ modDeckArray.length;
+        setCookie("perk6", "bechosen", 365);
+    } else {
+        setCookie("perk6", "notChosen", 365);
+    }
+    //Add three +0 create ice cards
+    if (elPerk7.classList.contains('checked')){
+        let newCard = "./elPerks/elCreateIce.jpg";
+        modDeckArray.push(newCard);
+        modDeckArray.push(newCard);
+        modDeckArray.push(newCard);
+        cardsInDeckText.innerHTML = "Cards in Deck: "+ modDeckArray.length;
+        setCookie("perk7", "bechosen", 365);
+    } else {
+        setCookie("perk7", "notChosen", 365);
+    }
+    //Add three +0 create wind cards
+    if (elPerk8.classList.contains('checked')){
+        let newCard = "./elPerks/elCreateWind.jpg";
+        modDeckArray.push(newCard);
+        modDeckArray.push(newCard);
+        modDeckArray.push(newCard);
+        setCookie("perk8", "bechosen", 365);
+    } else {
+        setCookie("perk8", "notChosen", 365);
+    }
+    //Add three +0 create nature cards
+    if (elPerk9.classList.contains('checked')){
+        let newCard = "./elPerks/elCreateNature.jpg";
+        modDeckArray.push(newCard);
+        modDeckArray.push(newCard);
+        modDeckArray.push(newCard);
+        setCookie("perk9", "bechosen", 365);
+    } else {
+        setCookie("perk9", "notChosen", 365);
+    }
+    //Replace two +0 cards with one +0 create fire and one +0 create nature card
+    if (elPerk10.classList.contains('checked')){
+        for (var i = 0; i<modDeckArray.length; i++){
+          if(modDeckArray[i] === mod3){
+              modDeckArray.splice(i, 2);
+              let newCard = "./elPerks/elCreateFire.jpg";
+              modDeckArray.push(newCard);
+              newCard = "./elPerks/elCreateNature.jpg";
+              modDeckArray.push(newCard);
+              i = modDeckArray.length;
+              cardsInDeckText.innerHTML = "Cards in Deck: "+ modDeckArray.length;
+          }
+        }        
+        setCookie("perk10", "bechosen", 365);
+    } else {
+        setCookie("perk10", "notChosen", 365);
+    }
+    //replace two +0 cards with one +0 create ice and one +0 create wind
+    if (elPerk11.classList.contains('checked')){
+        for (var i = 0; i<modDeckArray.length; i++){
+          if(modDeckArray[i] === mod5){
+              modDeckArray.splice(i, 2);
+              let newCard = "./elPerks/elCreateIce.jpg";
+              modDeckArray.push(newCard);
+              newCard = "./elPerks/elCreateWind.jpg";
+              modDeckArray.push(newCard);
+              i = modDeckArray.length;
+              cardsInDeckText.innerHTML = "Cards in Deck: "+ modDeckArray.length;
+          }
+        }    
+        setCookie("perk11", "bechosen", 365);
+    } else {
+        setCookie("perk11", "notChosen", 365);
+    }
+    //Add two +1 push 1 cards
+    if (elPerk12.classList.contains('checked')){
+        let newCard = "./elPerks/elPlusOnePushOne.jpg";
+        modDeckArray.push(newCard);
+        modDeckArray.push(newCard);
+        setCookie("perk12", "bechosen", 365);
+    } else {
+        setCookie("perk12", "notChosen", 365);
+    }
+    //Add one +1 Wound card
+    if (elPerk13.classList.contains('checked')){
+        let newCard = "./elPerks/elPlusOneWound.jpg";
+        modDeckArray.push(newCard);
+        setCookie("perk13", "bechosen", 365);
+    } else {
+        setCookie("perk13", "notChosen", 365);
+    }
+    //Add one +0 stun card
+    if (elPerk14.classList.contains('checked')){
+        let newCard = "./elPerks/elStun.jpg";
+        modDeckArray.push(newCard);
+        setCookie("perk14", "bechosen", 365);
+    } else {
+        setCookie("perk14", "notChosen", 365);
+    }
+    //Add one add target card
+    if (elPerk15.classList.contains('checked')){
+        let newCard = "./elPerks/elAddTarget.jpg";
+        modDeckArray.push(newCard);
+        setCookie("perk15", "bechosen", 365);
+    } else {
+        setCookie("perk15", "notChosen", 365);
+    }
+    defaultDeckArray = modDeckArray.slice();
+    confirmPerks();
+}
+
 //Modal for showing what is in the played modifier deck
 
 var zoomModal = document.getElementById("zoomModal");
