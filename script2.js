@@ -41,6 +41,57 @@ function checkCookie() {
     var perk13 = getCookie("perk13");
     var perk14 = getCookie("perk14");
     var perk15 = getCookie("perk15");
+    var cardHand1 = getCookie("cardhand1");
+    var cardHand2 = getCookie("cardhand2");
+    var cardHand3 = getCookie("cardhand3");
+    var cardHand4 = getCookie("cardhand4");
+    var cardHand5 = getCookie("cardhand5");
+    var cardHand6 = getCookie("cardhand6");
+    var cardHand7 = getCookie("cardhand7");
+    var cardHand8 = getCookie("cardhand8");
+    var cardHand9 = getCookie("cardhand9");
+    var cardHand10 = getCookie("cardhand10");
+    var cardHand11 = getCookie("cardhand11");
+    var cardHand12 = getCookie("cardhand12");
+
+    //Load Hand State
+    if (cardHand1 === "chosen"){
+      cardHand1.classList.remove("flipped");
+    }
+    if (cardHand2 === "chosen"){
+      cardHand2.classList.remove("flipped");
+    }
+    if (cardHand3 === "chosen"){
+      cardHand3.classList.remove("flipped");
+    }
+    if (cardHand4 === "chosen"){
+      cardHand4.classList.remove("flipped");
+    }
+    if (cardHand5 === "chosen"){
+      cardHand5.classList.remove("flipped");
+    }
+    if (cardHand6 === "chosen"){
+      cardHand6.classList.remove("flipped");
+    }
+    if (cardHand7 === "chosen"){
+      cardHand7.classList.remove("flipped");
+    }
+    if (cardHand8 === "chosen"){
+      cardHand8.classList.remove("flipped");
+    }
+    if (cardHand9 === "chosen"){
+      cardHand9.classList.remove("flipped");
+    }
+    if (cardHand10 === "chosen"){
+      cardHand10.classList.remove("flipped");
+    }
+    if (cardHand11 === "chosen"){
+      cardHand11.classList.remove("flipped");
+    }
+    if (cardHand12 === "chosen"){
+      cardHand12.classList.remove("flipped");
+    }
+
     switch (currentLevel){
       case "1":
         levelCount = 1;
@@ -2666,100 +2717,124 @@ for (var i = 0; i < cards.length; i++) {
         if(cardHand1.classList.contains("flipped")){
             cardHand1.src = card.firstChild.src;
             cardHand1.classList.remove("flipped");
+            setCookie("cardHand1", "chosen", 365);
             cardHand1.classList.add(`${this.id}`)
           } else if (cardHand2.classList.contains("flipped")){
             cardHand2.src = card.firstChild.src;
             cardHand2.classList.remove("flipped");
+            setCookie("cardHand2", "chosen", 365);
             cardHand2.classList.add(`${this.id}`);
           } else if (cardHand3.classList.contains("flipped")){
             cardHand3.src = card.firstChild.src;
             cardHand3.classList.remove("flipped");
+            setCookie("cardHand3", "chosen", 365);
             cardHand3.classList.add(`${this.id}`);
           } else if (cardHand4.classList.contains("flipped")){
             cardHand4.src = card.firstChild.src;
             cardHand4.classList.remove("flipped");
+            setCookie("cardHand4", "chosen", 365);
             cardHand4.classList.add(`${this.id}`);
           } else if (cardHand5.classList.contains("flipped")){
             cardHand5.src = card.firstChild.src;
             cardHand5.classList.remove("flipped");
+            setCookie("cardHand5", "chosen", 365);
             cardHand5.classList.add(`${this.id}`);
           } else if (cardHand6.classList.contains("flipped")){
             cardHand6.src = card.firstChild.src;
             cardHand6.classList.remove("flipped");
+            setCookie("cardHand6", "chosen", 365);
             cardHand6.classList.add(`${this.id}`);
           } else if (cardHand7.classList.contains("flipped")){
             cardHand7.src = card.firstChild.src;
             cardHand7.classList.remove("flipped");
+            setCookie("cardHand7", "chosen", 365);
             cardHand7.classList.add(`${this.id}`);
           } else if (cardHand8.classList.contains("flipped")){
             cardHand8.src = card.firstChild.src;
             cardHand8.classList.remove("flipped");
+            setCookie("cardHand8", "chosen", 365);
             cardHand8.classList.add(`${this.id}`);
           } else if (cardHand9.classList.contains("flipped")){
             cardHand9.src = card.firstChild.src;
             cardHand9.classList.remove("flipped");
+            setCookie("cardHand9", "chosen", 365);
             cardHand9.classList.add(`${this.id}`);
           } else if (cardHand10.classList.contains("flipped")){
             cardHand10.src = card.firstChild.src;
             cardHand10.classList.remove("flipped");
+            setCookie("cardHand10", "chosen", 365);
             cardHand10.classList.add(`${this.id}`);
           } else if (cardHand11.classList.contains("flipped")){
             cardHand11.src = card.firstChild.src;
             cardHand11.classList.remove("flipped");
+            setCookie("cardHand11", "chosen", 365);
             cardHand11.classList.add(`${this.id}`);
           } else if (cardHand12.classList.contains("flipped")){
             cardHand12.src = card.firstChild.src;
             cardHand12.classList.remove("flipped");
+            setCookie("cardHand12", "chosen", 365);
             cardHand12.classList.add(`${this.id}`);
           }
       } else {
         card.firstChild.classList.remove("add-border");
         if(cardHand1.classList.contains(`${this.id}`)){
           flipCard(cardHand1);
+          setCookie("cardHand1", "notchosen", 365);
           cardHand1.classList.remove("hiding");
           confirmHandButton.classList.add("not-without-more-selected");
         } else if (cardHand2.classList.contains(`${this.id}`)){
           flipCard(cardHand2);
+          setCookie("cardHand2", "notchosen", 365);
           cardHand2.classList.remove("hiding");
           confirmHandButton.classList.add("not-without-more-selected");
         } else if (cardHand3.classList.contains(`${this.id}`)){
           flipCard(cardHand3);
+          setCookie("cardHand3", "notchosen", 365);
           cardHand3.classList.remove("hiding");
           confirmHandButton.classList.add("not-without-more-selected");
         } else if (cardHand4.classList.contains(`${this.id}`)){
           flipCard(cardHand4);
+          setCookie("cardHand4", "notchosen", 365);
           cardHand4.classList.remove("hiding");
           confirmHandButton.classList.add("not-without-more-selected");
         } else if (cardHand5.classList.contains(`${this.id}`)){
           flipCard(cardHand5);
+          setCookie("cardHand5", "notchosen", 365);
           cardHand5.classList.remove("hiding");
           confirmHandButton.classList.add("not-without-more-selected");
         } else if (cardHand6.classList.contains(`${this.id}`)){
           flipCard(cardHand6);
+          setCookie("cardHand6", "notchosen", 365);
           cardHand6.classList.remove("hiding");
           confirmHandButton.classList.add("not-without-more-selected");
         } else if (cardHand7.classList.contains(`${this.id}`)){
           flipCard(cardHand7);
+          setCookie("cardHand7", "notchosen", 365);
           cardHand7.classList.remove("hiding");
           confirmHandButton.classList.add("not-without-more-selected");
         } else if (cardHand8.classList.contains(`${this.id}`)){
           flipCard(cardHand8);
+          setCookie("cardHand8", "notchosen", 365);
           cardHand8.classList.remove("hiding");
           confirmHandButton.classList.add("not-without-more-selected");
         } else if (cardHand9.classList.contains(`${this.id}`)){
           flipCard(cardHand9);
+          setCookie("cardHand9", "notchosen", 365);
           cardHand9.classList.remove("hiding");
           confirmHandButton.classList.add("not-without-more-selected");
         } else if (cardHand10.classList.contains(`${this.id}`)){
           flipCard(cardHand10);
+          setCookie("cardHand10", "notchosen", 365);
           cardHand10.classList.remove("hiding");
           confirmHandButton.classList.add("not-without-more-selected");
         } else if (cardHand11.classList.contains(`${this.id}`)){
           flipCard(cardHand11);
+          setCookie("cardHand11", "notchosen", 365);
           cardHand11.classList.remove("hiding");
           confirmHandButton.classList.add("not-without-more-selected");
         } else if (cardHand12.classList.contains(`${this.id}`)){
           flipCard(cardHand12);
+          setCookie("cardHand12", "notchosen", 365);
           cardHand12.classList.remove("hiding");
           confirmHandButton.classList.add("not-without-more-selected");
         }
